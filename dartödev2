@@ -1,0 +1,39 @@
+class canlilar {
+  String? ad;
+  int? yas; 
+  bool? cinsiyet;
+
+  canlilar({this.ad, this.yas, this.cinsiyet});
+
+  String yurumek() { 
+    return "${this.ad} isimli canlı yürüyor.";
+  }
+}
+class insan extends canlilar { 
+  String? soyad;
+  bool? gozluklumu;
+  double? aylikmaas;
+
+  insan(String ad, String soyad, bool gozluk, double gelir) {
+    super.ad = ad;
+    this.soyad = soyad;
+    this.gozluklumu = gozluk; 
+    this.aylikmaas = gelir;
+  }
+  String kosmak() {
+    return "${this.ad} ${this.soyad} koşuyor.";
+  }
+}
+void main(List<String> args) {
+  var x = new canlilar();
+  x.ad = "kopek";
+  x.yas = 2;
+
+  print(x.yurumek()); 
+
+  var y = new insan("başak", "kılıç", false, 45000);
+
+  print(y.yurumek());
+  print(y.kosmak());
+  
+}
